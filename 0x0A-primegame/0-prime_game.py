@@ -3,8 +3,9 @@
 Prime Game: Determines the winner of a prime number game between Maria and Ben.
 """
 
+
 def sieve_of_eratosthenes(n):
-    """Return a list of primes up to n (inclusive) using the Sieve of Eratosthenes."""
+    """Return a list of primes up to n (inclusive) using the Sieve ."""
     is_prime = [True] * (n + 1)
     p = 2
     while p * p <= n:
@@ -13,6 +14,7 @@ def sieve_of_eratosthenes(n):
                 is_prime[i] = False
         p += 1
     return [p for p in range(2, n + 1) if is_prime[p]]
+
 
 def count_prime_moves(n, primes):
     """Return the number of moves that can be made with the primes up to n."""
@@ -24,6 +26,7 @@ def count_prime_moves(n, primes):
             break
     return count
 
+
 def isWinner(x, nums):
     """Determine the winner of the prime game."""
     if x < 1 or not nums:
@@ -31,17 +34,17 @@ def isWinner(x, nums):
 
     max_num = max(nums)
     primes = sieve_of_eratosthenes(max_num)
-    
+
     maria_wins = 0
     ben_wins = 0
-    
+
     for n in nums:
         prime_moves = count_prime_moves(n, primes)
         if prime_moves % 2 == 0:
             ben_wins += 1
         else:
             maria_wins += 1
-    
+
     if maria_wins > ben_wins:
         return "Maria"
     elif ben_wins > maria_wins:
@@ -49,7 +52,6 @@ def isWinner(x, nums):
     else:
         return None
 
-# Ensure the file ends with a new line
 
 if __name__ == "__main__":
     print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
