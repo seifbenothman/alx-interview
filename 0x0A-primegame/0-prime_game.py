@@ -45,6 +45,4 @@ def isWinner(x, nums):
     else:
         return None
 
-# Example usage
-if __name__ == "__main__":
-    print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
+# Ensure the file ends with a new line
