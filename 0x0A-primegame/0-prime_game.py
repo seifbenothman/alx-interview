@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Prime Game: Determines the winner of a prime number game between Maria and Ben.
+"""
 
 def sieve_of_eratosthenes(n):
     """Return a list of primes up to n (inclusive) using the Sieve of Eratosthenes."""
@@ -22,6 +25,7 @@ def count_prime_moves(n, primes):
     return count
 
 def isWinner(x, nums):
+    """Determine the winner of the prime game."""
     if x < 1 or not nums:
         return None
 
@@ -46,3 +50,6 @@ def isWinner(x, nums):
         return None
 
 # Ensure the file ends with a new line
+
+if __name__ == "__main__":
+    print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
