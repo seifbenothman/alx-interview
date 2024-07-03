@@ -1,0 +1,6 @@
+
+### Steps to Ensure Compliance:
+1. **File Permissions**:
+   ```sh
+   chmod +x 0-prime_game.py
+   chmod +x main_0.py
